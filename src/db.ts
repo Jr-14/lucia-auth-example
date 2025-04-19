@@ -3,14 +3,6 @@ import { getEnvironmentVariables } from './env';
 
 const { dbHost, dbName, dbUser, dbPassword } = getEnvironmentVariables();
 
-console.log('Env vars', {
-  dbHost,
-  dbName,
-  dbUser,
-  dbPassword
-});
-
-// const db = drizzle(dbHost);
 const db = drizzle({ 
   connection: { 
     host: dbHost,

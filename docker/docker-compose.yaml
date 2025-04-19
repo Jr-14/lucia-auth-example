@@ -21,6 +21,7 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
       - pgdata_auth_dev:/var/lib/postgresql/data
+      - ../tables.sql:/docker-entrypoint-initdb.d/schema.sql:ro
 
 volumes:
   pgdata_auth_dev:
