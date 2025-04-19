@@ -1,5 +1,16 @@
 version: "3.8"
 services:
+  server:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ../:/app/
+    env_file: "../.env"
+    depends_on:
+      - db
   db:
     image: postgres:15-alpine
     ports:
@@ -7,9 +18,9 @@ services:
     environment:
       POSTGRES_DB: dev
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: password
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata_auth_dev:/var/lib/postgresql/data
 
 volumes:
-  pgdata:
+  pgdata_auth_dev:
