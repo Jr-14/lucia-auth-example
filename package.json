@@ -4,7 +4,7 @@
   "description": "Working through lucia auth examples",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:watch": "nodemon --watch . --ext 'ts,js' --exec ts-node src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,18 @@
     "url": "https://github.com/Jr-14/lucia-auth-example/issues"
   },
   "homepage": "https://github.com/Jr-14/lucia-auth-example#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.42.0",
+    "fastify": "^5.3.2",
+    "pg": "^8.14.1"
+  },
   "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@types/pg": "^8.11.13",
+    "drizzle-kit": "^0.31.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }
