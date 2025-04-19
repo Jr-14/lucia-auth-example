@@ -7,8 +7,8 @@ import crypto from "node:crypto";
 import type { User, Session } from "./db";
 
 export type SessionValidationResult =
-	| { session: Session; user: User }
-	| { session: null; user: null };
+  | { session: Session; user: User }
+  | { session: null; user: null };
 
 export function generateSessionToken(): string {
   const bytes = new Uint8Array(20);

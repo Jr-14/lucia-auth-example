@@ -2,7 +2,7 @@ import { drizzle } from 'drizzle-orm/node-postgres';
 import { pgTable, serial, text, integer, timestamp } from "drizzle-orm/pg-core";
 import type { InferSelectModel, InferInsertModel } from 'drizzle-orm'
 
-import { getEnvironmentVariables } from './env';
+import { getEnvironmentVariables } from '../env';
 
 const { dbHost, dbName, dbUser, dbPassword } = getEnvironmentVariables();
 
